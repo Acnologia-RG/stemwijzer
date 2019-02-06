@@ -1,0 +1,13 @@
+body{
+	margin: 0;
+	background-color: #7d05c0;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	background-image: url("https://tweedekamer2017.stemwijzer.nl/public/gfx/background.jpg");
+}
+#logoStemwijzer{
+	max-width: 331px;
+	max-height: 56px;
+}

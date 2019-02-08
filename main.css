@@ -1,5 +1,6 @@
 body{
 	margin: 0;
+	padding: 28px 0px;
 	background-color: #7d05c0;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -10,4 +11,10 @@ body{
 #logoStemwijzer{
 	max-width: 331px;
 	max-height: 56px;
+}
+main{
+	background-color: white;
+	max-width: 80%;
+	margin:0 auto;
+	padding: 70px 7.5%;
 }

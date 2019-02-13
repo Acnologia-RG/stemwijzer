@@ -9,16 +9,15 @@
 <body>
 	<main>
 		<img id="logoStemwijzer" src="https://tweedekamer2017.stemwijzer.nl/public/gfx/logo-stemwijzer.svg">
-		<h1 class="statement__title">StemWijzer Tweede Kamer 2017</h1>
-		<p class="statement__description"></p>
-		<button onclick="">start</button>
-		<button onclick="">eens</button>
-		<button onclick="">geen mening</button>
-		<button onclick="">oneens</button>
-		<button onclick="">sla deze vraag over</button>
-
+		<h1 id="statement_title">StemWijzer Tweede Kamer 2017</h1>
+		<p id="statement_description"></p>
+		<button style="display: inline-block;" onclick="start()">start</button>
+		<button style="display: hidden;" onclick="addAnswer('pro','up')">eens</button>
+		<button style="display: hidden;" onclick="addAnswer('ambivalent','up')">geen mening</button>
+		<button style="display: hidden;" onclick="addAnswer('contra','up')">oneens</button>
+		<button style="display: hidden;" onclick="addAnswer(null, 'down')">back</button>
 	</main>
 </body>
-<script src="vote.js"></script>	
 <script src="data.js"></script>
+<script src="vote.js"></script>
 </html>

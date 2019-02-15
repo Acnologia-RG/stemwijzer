@@ -18,7 +18,7 @@ main{
 	margin:0 auto;
 	padding: 70px 7.5%;
 }
-sbutton{
+button{
 	margin-right: 1.33%;
 	width: auto;
 	min-width: 188px;
@@ -29,9 +29,7 @@ sbutton{
 	background-color: black;
 	color: white;
 	transition: background-color .2s ease;
-	display: inline-block;
 	padding: .65em .5em;
-	background: transparent;
 	border-radius: 5px;
 	font-weight: bold;
 	border-width: 2px;
@@ -48,4 +46,7 @@ sbutton{
 	text-shadow: none;
 	margin: 0em;
 	font: 400 13.3333px Arial;
+}
+.buttontoggle{
+	display: inline-block !important;
 }

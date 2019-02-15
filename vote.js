@@ -1,5 +1,6 @@
 const title = document.getElementById("statement_title");
 const question = document.getElementById("statement_description");
+var buttons = document.getElementsByClassName("buttons");
 
 var question_number = 0;
 var answers = [];
@@ -12,6 +13,9 @@ console.log(partij_results);
 
 
 function start() {
+	for (var i = 0; i < buttons.length; i++) {
+		buttons[i].classList.toggle("buttontoggle");
+	}
 	editWebpage();
 }
 function editWebpage() {
@@ -21,8 +25,8 @@ function editWebpage() {
 function nextQuestion(counting) {
 	if (subjects[question_number]) {
 		if (counting == "up" && question_number != subjects.length - 1) {
-			editWebpage();
 			question_number++;
+			editWebpage();
 		} else if (question_number != 0) {
 			question_number--;
 			editWebpage();
@@ -30,6 +34,14 @@ function nextQuestion(counting) {
 	}
 }
 function addAnswer(answer, direction) {
-	answers[question_number] = answer;
-	nextQuestion(direction);
+	if (answer == null && direction == "down" && question_number == 0) {
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].classList.toggle("buttontoggle");
+		}
+		title.innerHTML = "StemWijzer Tweede Kamer 2017";
+		question.innerHTML = "";
+	} else {
+		answers[question_number] = answer;
+		nextQuestion(direction);
+	}	
 }

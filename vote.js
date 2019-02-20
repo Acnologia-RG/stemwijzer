@@ -1,5 +1,6 @@
 const title = document.getElementById("statement_title");
 const question = document.getElementById("statement_description");
+const title_pic = document.getElementById("logoStemwijzer");
 var buttons = document.getElementsByClassName("buttons");
 
 var question_number = 0;
@@ -11,11 +12,11 @@ partij_results[i] = {"name": parties[i].name, "points": 0}
 }
 console.log(partij_results);
 
-
 function start() {
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].classList.toggle("buttontoggle");
 	}
+	title_pic.classList.toggle("buttontoggle");
 	editWebpage();
 }
 function editWebpage() {
@@ -38,8 +39,9 @@ function addAnswer(answer, direction) {
 		for (var i = 0; i < buttons.length; i++) {
 			buttons[i].classList.toggle("buttontoggle");
 		}
+		title_pic.classList.toggle("buttontoggle");
 		title.innerHTML = "StemWijzer Tweede Kamer 2017";
-		question.innerHTML = "";
+		question.innerHTML = "Test uw politieke voorkeur aan de hand van 12 stellingen";
 	} else {
 		answers[question_number] = answer;
 		nextQuestion(direction);

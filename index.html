@@ -8,11 +8,11 @@
 </head>
 <body>
 	<main>
-		<img id="logoStemwijzer" src="https://tweedekamer2017.stemwijzer.nl/public/gfx/logo-stemwijzer.svg">
+		<img class="buttontoggle" style="display: none;" id="logoStemwijzer" src="https://tweedekamer2017.stemwijzer.nl/public/gfx/logo-stemwijzer.svg">
 		<h1 id="statement_title">StemWijzer Tweede Kamer 2017</h1>
-		<p id="statement_description"></p>
+		<p id="statement_description">Test uw politieke voorkeur aan de hand van 12 stellingen</p>
 		<button class="buttons buttontoggle" style="display: none;" onclick="start()">start</button>
-		<button class="buttons" style="display: none;" onclick="addAnswer(null, 'down')">back</button>
+		<button class="buttons" id="backbutton" style="display: none;" onclick="addAnswer(null, 'down')"></button>
 		<button class="buttons" style="display: none;" onclick="addAnswer('pro','up')">eens</button>
 		<button class="buttons" style="display: none;" onclick="addAnswer('ambivalent','up')">geen mening</button>
 		<button class="buttons" style="display: none;" onclick="addAnswer('contra','up')">oneens</button>

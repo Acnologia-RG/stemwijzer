@@ -12,11 +12,43 @@ body{
 	max-width: 331px;
 	max-height: 56px;
 }
+#statement_title{
+	font-size: 33px;
+	margin-bottom: 1em;
+	color: #01B4DC;
+	font-family: 'Arial';
+	font-weight: bold;
+}
+#statement_description{
+	font-size: 33px;
+	min-height: 155px;
+	font-family: 'Arial';
+	margin-bottom: 1em;
+}
 main{
 	background-color: white;
 	max-width: 80%;
 	margin:0 auto;
 	padding: 70px 7.5%;
+}
+#backbutton{
+	width: 50px !important;
+	height: 50px !important;
+	min-width: 50px !important;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(https://tweedekamer2017.stemwijzer.nl/public/gfx/icon-arrow-back.svg);
+	background-color: #E7EAEB;
+	border-radius: 50px !important;
+	transition: transform .2s;
+	display: inline-block;
+	padding: .65em .5em;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	position: absolute;
+	left: 200px;
+	top: 50px;
 }
 button{
 	margin-right: 1.33%;
@@ -30,7 +62,7 @@ button{
 	color: white;
 	transition: background-color .2s ease;
 	padding: .65em .5em;
-	border-radius: 5px;
+	border-radius: 10px;
 	font-weight: bold;
 	border-width: 2px;
 	border-style: outset;
@@ -46,6 +78,7 @@ button{
 	text-shadow: none;
 	margin: 0em;
 	font: 400 13.3333px Arial;
+	cursor: pointer;
 }
 .buttontoggle{
 	display: inline-block !important;

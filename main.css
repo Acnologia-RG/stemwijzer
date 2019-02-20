@@ -30,6 +30,7 @@ main{
 	max-width: 80%;
 	margin:0 auto;
 	padding: 70px 7.5%;
+	border-radius: 10px;
 }
 #backbutton{
 	width: 50px !important;

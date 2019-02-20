@@ -35,7 +35,13 @@ function nextQuestion(counting) {
 	}
 }
 function addAnswer(answer, direction) {
-	if (answer == null && direction == "down" && question_number == 0) {
+	if (direction == "up" && question_number == subjects.length) {
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].classList.toggle("buttontoggle");
+		}
+		title.innerHTML = "";
+		question.innerHTML = "";
+	} else if (answer == null && direction == "down" && question_number == 0) {
 		for (var i = 0; i < buttons.length; i++) {
 			buttons[i].classList.toggle("buttontoggle");
 		}
@@ -46,4 +52,7 @@ function addAnswer(answer, direction) {
 		answers[question_number] = answer;
 		nextQuestion(direction);
 	}	
+}
+function results(){
+	//make a result function
 }

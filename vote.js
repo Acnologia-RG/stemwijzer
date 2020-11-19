@@ -14,9 +14,9 @@ partij_results[i] = {"name": parties[i].name, "points": 0}
 
 function start() {
 	for (var i = 0; i < buttons.length; i++) {
-		buttons[i].classList.toggle("displaytoggle");
+		buttons[i].classList.toggle("displayToggle");
 	}
-	title_pic.classList.toggle("displaytoggle");
+	title_pic.classList.toggle("displayToggle");
 	editWebpage();
 }
 function editWebpage() {
@@ -32,12 +32,12 @@ function nextQuestion(counting) {
 			editWebpage();
 		} else if (counting == "up" && question_number == subjects.length -1) {
 		for (var i = 0; i < buttons.length; i++) {
-			buttons[i].classList.toggle("displaytoggle");
+			buttons[i].classList.toggle("displayToggle");
 		}
 		title.innerHTML = "Zijn er onderwerpen die u extra belangrijk vindt?";
 		question.innerHTML = "Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.";
 		startButton.innerHTML = "next";
-		startButton.classList.toggle("displayblock");
+		startButton.classList.toggle("displayBlock");
 		var H2 = document.createElement("h2")
 		var H2Text = document.createTextNode("Extra belangrijke onderwerpen");
 		H2.appendChild(H2Text);
@@ -66,9 +66,9 @@ function nextQuestion(counting) {
 function addAnswer(answer, direction) {
 	if (answer == null && direction == "down" && question_number == 0) {
 		for (var i = 0; i < buttons.length; i++) {
-			buttons[i].classList.toggle("displaytoggle");
+			buttons[i].classList.toggle("displayToggle");
 		}
-		title_pic.classList.toggle("displaytoggle");
+		title_pic.classList.toggle("displayToggle");
 		title.innerHTML = "StemWijzer Tweede Kamer 2017";
 		question.innerHTML = "Test uw politieke voorkeur aan de hand van 12 stellingen";
 	} else {

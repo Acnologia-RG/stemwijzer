@@ -81,9 +81,9 @@ button{
 	font: 400 13.3333px Arial;
 	cursor: pointer;
 }
-.displaytoggle{
+.displayToggle{
 	display: inline-block !important;
 }
-.displayblock{
+.displayBlock{
 	display: block !important;
 }

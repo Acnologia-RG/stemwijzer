@@ -1497,10 +1497,5 @@ var parties = [{
 		"name": "Libertarische Partij",
 		"secular": true,
 		"size": 0
-	},
-	{
-		"name": "bull shit",
-		"secular": true,
-		"size": 16
 	}
 ];

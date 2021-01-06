@@ -1,8 +1,9 @@
 const title = document.getElementById("statement_title");
 const question = document.getElementById("statement_description");
 const title_pic = document.getElementById("logoStemwijzer");
-var buttons = document.getElementsByClassName("buttons");
 const startButton = document.getElementById("startButton");
+const footer = document.getElementById("footer");
+var buttons = document.getElementsByClassName("buttons");
 
 var question_number = 0;
 var answers = [];
@@ -52,18 +53,20 @@ function nextQuestion(counting) {
 
 			for (var i = 0; i < subjects.length; i++) {
 				var li = document.createElement("li");
-				var input = document.createElement("input");
+				var checkbox = document.createElement("input");
+				checkbox.type ="checkbox";
+				checkbox.id = i;
 				var label = document.createElement("label");
 				var span = document.createElement("span");
 				var title2 = document.createTextNode(subjects[i].title);
 				span.appendChild(title2);
 				label.appendChild(span);
-				input.appendChild(label);
-				li.appendChild(input);
+				li.appendChild(checkbox);
+				li.appendChild(label);
 				ul.appendChild(li);
 			}
-			document.getElementById("footer").appendChild(H2);
-			document.getElementById("footer").appendChild(ul);
+			footer.appendChild(H2);
+			footer.appendChild(ul);
 
 		} else if (question_number != 0) {
 			question_number--;
@@ -89,7 +92,14 @@ function addAnswer(answer, direction) {
 	}
 }
 
-function results(){
+function results() {
 	//make a result function
+	for (var i = 0; i < subjects[0].parties.length; i++){
+		if (subjects[0].parties[i].name == partij_results[0].name) {
+			if (answers[0] == subjects[0].parties[i].position) {
+				partij_results[0].points++
+			}
+		}
+	}
 	console.log(partij_results);
 }

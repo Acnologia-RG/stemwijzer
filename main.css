@@ -29,8 +29,15 @@ main{
 	background-color: white;
 	max-width: 80%;
 	margin:0 auto;
-	padding: 70px 7.5%;
-	border-radius: 10px;
+	padding: 70px 7.5% 30px 7.5%;
+	border-radius: 10px 0;
+}
+footer{
+	background-color: white;
+	max-width: 80%;
+	margin:0 auto;
+	padding: 10px 7.5% 70px 7.5%;
+	border-radius: 0 10px;
 }
 #backbutton{
 	width: 50px !important;
@@ -86,4 +93,8 @@ button{
 }
 .displayBlock{
 	display: block !important;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
 }

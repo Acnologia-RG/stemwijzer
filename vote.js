@@ -94,11 +94,13 @@ function addAnswer(answer, direction) {
 
 function results() {
 	//make a result function
-	for (var a = 0; a < answers.length; a++) {
-		for (var i = 0; i < subjects[a].parties.length; i++){
-			if (subjects[a].parties[i].name == partij_results[0].name) {
-				if (answers[a] == subjects[0].parties[i].position) {
-					partij_results[0].points++
+	for (let h = 0; h < partij_results.length; h++) {
+		for (var a = 0; a < answers.length; a++) {
+			for (var i = 0; i < subjects[a].parties.length; i++){
+				if (subjects[a].parties[i].name == partij_results[h].name) {
+					if (answers[a] == subjects[a].parties[i].position) {
+						partij_results[h].points++
+					}
 				}
 			}
 		}

@@ -12,7 +12,7 @@ var answers = [];
 var partij_results = [];
 
 for (var i = 0; i < parties.length; i++) {
-	partij_results[i] = {"name": parties[i].name, "points": 0}
+	partij_results[i] = {"name": parties[i].name, "points": 0, "secular": parties[i].secular, "size": parties[i].size}
 }
 
 function start() {
@@ -114,5 +114,16 @@ function results() {
 	main.classList.toggle("displayhidden");
 	footer.classList.toggle("displayhidden");
 	section.classList.toggle("displayhidden");
+
+	partij_results.sort((a, b) => b.points-a.points)
 	console.log(partij_results);
+
+	
 }
+// function secularToggle() {
+// .displayhidden;
+// }
+
+// function sizeToggle() {
+// .displayhidden;
+// }

@@ -30,14 +30,21 @@ main{
 	max-width: 80%;
 	margin:0 auto;
 	padding: 70px 7.5% 30px 7.5%;
-	border-radius: 10px 0;
+	border-radius: 10px 10px 0 0;
+}
+section{
+	background-color: white;
+	max-width: 80%;
+	margin:0 auto;
+	padding: 70px 7.5% 30px 7.5%;
+	border-radius: 10px;
 }
 footer{
 	background-color: white;
 	max-width: 80%;
 	margin:0 auto;
 	padding: 10px 7.5% 70px 7.5%;
-	border-radius: 0 10px;
+	border-radius: 0 0 10px 10px;
 }
 #backbutton{
 	width: 50px !important;
@@ -93,6 +100,9 @@ button{
 }
 .displayBlock{
 	display: block !important;
+}
+.displayhidden{
+	display: none !important;
 }
 ul{
 	list-style-type: none;

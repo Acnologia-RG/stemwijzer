@@ -2,6 +2,8 @@ const title = document.getElementById("statement_title");
 const question = document.getElementById("statement_description");
 const title_pic = document.getElementById("logoStemwijzer");
 const startButton = document.getElementById("startButton");
+const main = document.getElementById("main");
+const section = document.getElementById("section");
 const footer = document.getElementById("footer");
 var buttons = document.getElementsByClassName("buttons");
 
@@ -93,17 +95,24 @@ function addAnswer(answer, direction) {
 }
 
 function results() {
-	//make a result function
-	for (let h = 0; h < partij_results.length; h++) {
+	//make a part that counts the extra points
+	for (var h = 0; h < partij_results.length; h++) {
 		for (var a = 0; a < answers.length; a++) {
+			var check = document.getElementById(a);
 			for (var i = 0; i < subjects[a].parties.length; i++){
 				if (subjects[a].parties[i].name == partij_results[h].name) {
 					if (answers[a] == subjects[a].parties[i].position) {
+						if (check.checked == true) {
+							partij_results[h].points++
+						}
 						partij_results[h].points++
 					}
 				}
 			}
 		}
 	}
+	main.classList.toggle("displayhidden");
+	footer.classList.toggle("displayhidden");
+	section.classList.toggle("displayhidden");
 	console.log(partij_results);
 }

@@ -101,7 +101,10 @@ button{
 .displayBlock{
 	display: block !important;
 }
-.displayhidden{
+.displayHidden{
+	display: none !important;
+}
+.displayHidden2{
 	display: none !important;
 }
 ul{

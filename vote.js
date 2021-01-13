@@ -111,9 +111,9 @@ function results() {
 			}
 		}
 	}
-	main.classList.toggle("displayhidden");
-	footer.classList.toggle("displayhidden");
-	section.classList.toggle("displayhidden");
+	main.classList.toggle("displayHidden");
+	footer.classList.toggle("displayHidden");
+	section.classList.toggle("displayHidden");
 
 	partij_results.sort((a, b) => b.points-a.points)
 	console.log(partij_results);
@@ -121,14 +121,14 @@ function results() {
 // make this throw down the results in the section (maybe in a HTML p or something)
 	partij_results.forEach((partie, index) => {
 		console.log(`i value: ${index} | partie:`, partie);
-	result = document.createElement("P");
+	result = document.createElement("h4");
 	result.innerHTML = partie.name +" was het eens met "+ partie.points +" points";
-	if (partie.secular === false) {
+	if (partie.secular === false && partie.size <= 15) {
+		result.setAttribute('class', 'none-secular sizeSmall');
+	} else if (partie.secular === false) {
 		result.setAttribute('class', 'none-secular');
 	} else if (partie.size <= 15 ) {
 		result.setAttribute('class', 'sizeSmall');
-	} else if (partie.secular === false && partie.size <= 15) {
-		result.setAttribute('class', 'none-secular sizeSmall');
 	}
 	section.appendChild(result);
 	});
@@ -136,10 +136,16 @@ function results() {
 
 // make this toggle on/off the secular parties only or not
 function secularToggle() {
-.displayhidden;
+	var secular = document.getElementsByClassName("none-secular");
+	for (var i = 0; i < secular.length; i++) {
+		secular[i].classList.toggle("displayHidden");
+	}
 }
 
 // make this toggle on/off the small parties only or not
 function sizeToggle() {
-.displayhidden;
+	var size = document.getElementsByClassName("sizeSmall");
+	for (var i = 0; i < size.length; i++) {
+		size[i].classList.toggle("displayHidden2");
+	}
 }

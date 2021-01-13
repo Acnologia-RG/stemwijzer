@@ -118,12 +118,28 @@ function results() {
 	partij_results.sort((a, b) => b.points-a.points)
 	console.log(partij_results);
 
-	
+// make this throw down the results in the section (maybe in a HTML p or something)
+	partij_results.forEach((partie, index) => {
+		console.log(`i value: ${index} | partie:`, partie);
+	result = document.createElement("P");
+	result.innerHTML = partie.name +" was het eens met "+ partie.points +" points";
+	if (partie.secular === false) {
+		result.setAttribute('class', 'none-secular');
+	} else if (partie.size <= 15 ) {
+		result.setAttribute('class', 'sizeSmall');
+	} else if (partie.secular === false && partie.size <= 15) {
+		result.setAttribute('class', 'none-secular sizeSmall');
+	}
+	section.appendChild(result);
+	});
 }
-// function secularToggle() {
-// .displayhidden;
-// }
 
-// function sizeToggle() {
-// .displayhidden;
-// }
+// make this toggle on/off the secular parties only or not
+function secularToggle() {
+.displayhidden;
+}
+
+// make this toggle on/off the small parties only or not
+function sizeToggle() {
+.displayhidden;
+}

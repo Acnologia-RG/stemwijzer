@@ -7,12 +7,12 @@ const section = document.getElementById("section");
 const footer = document.getElementById("footer");
 var buttons = document.getElementsByClassName("buttons");
 
-var question_number = 0;
+var questionNumber = 0;
 var answers = [];
-var partij_results = [];
+var partijResults = [];
 
 for (var i = 0; i < parties.length; i++) {
-	partij_results[i] = {"name": parties[i].name, "points": 0, "secular": parties[i].secular, "size": parties[i].size}
+	partijResults[i] = {"name": parties[i].name, "points": 0, "secular": parties[i].secular, "size": parties[i].size}
 }
 
 function start() {
@@ -25,20 +25,18 @@ function start() {
 }
 
 function editWebpage() {
-	title.innerHTML = subjects[question_number].title;
-	question.innerHTML = subjects[question_number].statement;
+	title.innerHTML = subjects[questionNumber].title;
+	question.innerHTML = subjects[questionNumber].statement;
 }
 
 function nextQuestion(counting) {
-	if (subjects[question_number]) {
-		console.log(question_number);
+	if (subjects[questionNumber]) {
 
-		if (counting == "up" && question_number != subjects.length - 1) {
-			question_number++;
-			console.log(answers);
+		if (counting == "up" && questionNumber != subjects.length - 1) {
+			questionNumber++;
 			editWebpage();
 
-		} else if (counting == "up" && question_number == subjects.length -1) {
+		} else if (counting == "up" && questionNumber == subjects.length -1) {
 			for (var i = 0; i < buttons.length; i++) {
 				buttons[i].classList.toggle("displayToggle");
 			}
@@ -70,16 +68,15 @@ function nextQuestion(counting) {
 			footer.appendChild(H2);
 			footer.appendChild(ul);
 
-		} else if (question_number != 0) {
-			question_number--;
-			console.log(answers);
+		} else if (questionNumber != 0) {
+			questionNumber--;
 			editWebpage();
 		}
 	}
 }
 
 function addAnswer(answer, direction) {
-	if (answer == null && direction == "down" && question_number == 0) {
+	if (answer == null && direction == "down" && questionNumber == 0) {
 		for (var i = 0; i < buttons.length; i++) {
 			buttons[i].classList.toggle("displayToggle");
 		}
@@ -89,23 +86,23 @@ function addAnswer(answer, direction) {
 		question.innerHTML = "Test uw politieke voorkeur aan de hand van 12 stellingen";
 
 	} else {
-		answers[question_number] = answer;
+		answers[questionNumber] = answer;
 		nextQuestion(direction);
 	}
 }
 
 function results() {
 	//make a part that counts the extra points
-	for (var h = 0; h < partij_results.length; h++) {
+	for (var h = 0; h < partijResults.length; h++) {
 		for (var a = 0; a < answers.length; a++) {
 			var check = document.getElementById(a);
 			for (var i = 0; i < subjects[a].parties.length; i++){
-				if (subjects[a].parties[i].name == partij_results[h].name) {
+				if (subjects[a].parties[i].name == partijResults[h].name) {
 					if (answers[a] == subjects[a].parties[i].position) {
 						if (check.checked == true) {
-							partij_results[h].points++
+							partijResults[h].points++
 						}
-						partij_results[h].points++
+						partijResults[h].points++
 					}
 				}
 			}
@@ -115,12 +112,12 @@ function results() {
 	footer.classList.toggle("displayHidden");
 	section.classList.toggle("displayHidden");
 
-	partij_results.sort((a, b) => b.points-a.points)
-	console.log(partij_results);
+	partijResults.sort((a, b) => b.points-a.points)
 
-// make this throw down the results in the section (maybe in a HTML p or something)
-	partij_results.forEach((partie, index) => {
-		console.log(`i value: ${index} | partie:`, partie);
+	/**
+	 * @param partie = one partie from partijResults
+	 */
+	partijResults.forEach((partie) => {
 	result = document.createElement("h4");
 	result.innerHTML = partie.name +" was het eens met "+ partie.points +" points";
 	if (partie.secular === false && partie.size <= 15) {
